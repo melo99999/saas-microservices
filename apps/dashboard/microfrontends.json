@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@vercel/microfrontends/schema/schema.json",
   "applications": {
-    "saas-microservices-dashboard": {
+    "saas-microservices-emulation": {
       "development": {
         "fallback": "dashboard-acme.vercel.app"
       },
