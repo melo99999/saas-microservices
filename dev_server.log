@@ -1,0 +1,255 @@
+
+> saas-microservices@ dev /app
+> turbo run dev
+
+turbo 2.5.5
+
+• Packages in scope: api, dashboard, emulation
+• Running dev in 3 packages
+• Remote caching disabled
+api:dev: cache bypass, force executing aeb2c328ec8ff188
+dashboard:proxy: cache bypass, force executing 7051df325edc45c2
+dashboard:dev: cache bypass, force executing 34a53cc0220320d1
+emulation:dev: cache bypass, force executing 4907c694fed45bc8
+dashboard:proxy:
+dashboard:proxy: ▲ Microfrontends Proxy (2.0.1) Started
+dashboard:proxy:   - Proxy URL: http://localhost:3024
+dashboard:proxy:   - Config: /app/apps/dashboard/microfrontends.json
+dashboard:proxy:   - Local Applications:
+dashboard:proxy:     • saas-microservices-dashboard (port 5628)
+dashboard:proxy:     • saas-microservices-api (port 3001)
+dashboard:proxy:     • saas-microservices-emulation (port 3002)
+dashboard:proxy:
+dashboard:proxy: Requests directly to the ports of these applications may be automatically
+dashboard:proxy: redirected to this proxy. Set the MFE_DISABLE_LOCAL_PROXY_REWRITE=1
+dashboard:proxy: environment variable to disable this behavior.
+dashboard:proxy:
+dashboard:proxy: ──────────────────────────────────────────────────
+dashboard:proxy:
+emulation:dev:
+emulation:dev: > emulation@1.0.0 dev /app/apps/emulation
+emulation:dev: > tsx src/index.ts
+emulation:dev:
+dashboard:dev:
+dashboard:dev: > dashboard@0.1.0 dev /app/apps/dashboard
+dashboard:dev: > next dev --port $(microfrontends port)
+dashboard:dev:
+api:dev:
+api:dev: > api@1.0.0 dev /app/apps/api
+api:dev: > tsx src/index.ts
+api:dev:
+dashboard:dev:
+dashboard:dev:   ▲ dashboard@0.1.0
+dashboard:dev:     · setting port to 5628
+dashboard:dev:
+emulation:dev: Emulation app listening on port 3002
+api:dev: API app listening on port 3001
+dashboard:dev: Microfrontends Proxy running on http://localhost:3024
+dashboard:dev:    ▲ Next.js 16.0.10 (Turbopack)
+dashboard:dev:    - Local:         http://localhost:5628
+dashboard:dev:    - Network:       http://192.168.0.2:5628
+dashboard:dev:    - Experiments (use with caution):
+dashboard:dev:      ✓ multiZoneDraftMode
+dashboard:dev:
+dashboard:dev:  ✓ Starting...
+dashboard:dev: Attention: Next.js now collects completely anonymous telemetry regarding usage.
+dashboard:dev: This information is used to shape Next.js' roadmap and prioritize features.
+dashboard:dev: You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+dashboard:dev: https://nextjs.org/telemetry
+dashboard:dev:
+dashboard:dev:  ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+dashboard:dev:  ✓ Ready in 2.1s
+dashboard:proxy:  / - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy: (node:5156) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+dashboard:proxy: (Use `node --trace-deprecation ...` to show where the warning was created)
+dashboard:proxy:  /login - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:dev:  ○ Compiling /login ...
+dashboard:dev:  GET /login 200 in 7.9s (compile: 7.4s, proxy.ts: 18ms, render: 525ms)
+dashboard:proxy:  /_next/static/media/797e433ab948586e-s.p.dbea232f.woff2 - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/media/caa3a2e1cccd8315-s.p.853070df.woff2 - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Broot-of-the-server%5D__af3b7d06._.css - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_e20deb6e._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_react-dom_8e699084._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_react-server-dom-turbopack_3cc7e47c._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_next-devtools_index_a4b2756f.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_62bf7d2d._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_client_452209ea._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_5bd4361b._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/69652_%40swc_helpers_cjs_679851cc._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_a0ff3932._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/turbopack-apps_dashboard_a5152914._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_663657c5._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_favicon_ico_mjs_043db7d3._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/_060bd90a._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_layout_tsx_b7f4bad0._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_login_page_tsx_290eed6c._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_login_page_tsx_5ecb0cb6._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_client_components_builtin_global-error_b7f4bad0.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_4cc8da19._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/webpack-hmr?id=wc6eAonC3yQUPueAzD4Rn - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /api/users/login - Matched /api/users/:path*. Routing to saas-microservices-api (local)
+dashboard:proxy:  / - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /api/users/user - Matched /api/users/:path*. Routing to saas-microservices-api (local)
+dashboard:proxy:  /api/dashboard/activity - Matched /api/dashboard/:path*. Routing to saas-microservices-api (local)
+dashboard:proxy:  /_next/static/media/797e433ab948586e-s.p.dbea232f.woff2 - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Broot-of-the-server%5D__af3b7d06._.css - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/media/caa3a2e1cccd8315-s.p.853070df.woff2 - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_e20deb6e._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:dev:  GET / 200 in 2.1s (compile: 1593ms, proxy.ts: 12ms, render: 467ms)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_react-dom_8e699084._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_react-server-dom-turbopack_3cc7e47c._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_next-devtools_index_a4b2756f.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_62bf7d2d._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_client_452209ea._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_5bd4361b._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/69652_%40swc_helpers_cjs_679851cc._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_a0ff3932._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/turbopack-apps_dashboard_a5152914._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_663657c5._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_favicon_ico_mjs_043db7d3._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/_060bd90a._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_layout_tsx_b7f4bad0._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_c407dc8f._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/node_modules__pnpm_0605e777._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_page_tsx_5ecb0cb6._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_client_components_builtin_global-error_b7f4bad0.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_4cc8da19._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/webpack-hmr?id=PUXuZ-T43Ygqhe_1D_Avf - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  / - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /api/users/user - Matched /api/users/:path*. Routing to saas-microservices-api (local)
+dashboard:proxy:  /api/dashboard/activity - Matched /api/dashboard/:path*. Routing to saas-microservices-api (local)
+dashboard:proxy:  /_next/static/chunks/%5Broot-of-the-server%5D__af3b7d06._.css - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_e20deb6e._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_react-dom_8e699084._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:dev:  GET / 200 in 315ms (compile: 8ms, proxy.ts: 11ms, render: 296ms)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_react-server-dom-turbopack_3cc7e47c._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_next-devtools_index_a4b2756f.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_62bf7d2d._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_client_452209ea._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_5bd4361b._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/69652_%40swc_helpers_cjs_679851cc._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_a0ff3932._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/turbopack-apps_dashboard_a5152914._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_663657c5._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_favicon_ico_mjs_043db7d3._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/_060bd90a._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_layout_tsx_b7f4bad0._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_c407dc8f._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/node_modules__pnpm_0605e777._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_page_tsx_5ecb0cb6._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_client_components_builtin_global-error_b7f4bad0.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/webpack-hmr?id=0ze326Rm_yVvuXaHM8ec9 - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_4cc8da19._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /devices - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /__nextjs_font/geist-latin.woff2 - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /api/emulation/devices - Matched /api/emulation/:path*. Routing to saas-microservices-emulation (local)
+dashboard:proxy:  /api/users/user - Matched /api/users/:path*. Routing to saas-microservices-api (local)
+dashboard:proxy:  /_next/static/chunks/%5Broot-of-the-server%5D__af3b7d06._.css - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_e20deb6e._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_react-dom_8e699084._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_react-server-dom-turbopack_3cc7e47c._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_next-devtools_index_a4b2756f.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_62bf7d2d._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_client_452209ea._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:dev:  GET /devices 200 in 1051ms (compile: 826ms, proxy.ts: 6ms, render: 219ms)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_5bd4361b._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/69652_%40swc_helpers_cjs_679851cc._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_a0ff3932._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/turbopack-apps_dashboard_a5152914._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_663657c5._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_favicon_ico_mjs_043db7d3._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/_060bd90a._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_layout_tsx_b7f4bad0._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_client_components_builtin_global-error_b7f4bad0.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_5ebd0cf1._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/node_modules__pnpm_0605e777._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_devices_page_tsx_5ecb0cb6._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_4cc8da19._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/webpack-hmr?id=HxMPYYa2tWejCMKHMR05I - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /api/users/login - Matched /api/users/:path*. Routing to saas-microservices-api (local)
+dashboard:proxy:  / - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /api/users/user - Matched /api/users/:path*. Routing to saas-microservices-api (local)
+dashboard:proxy:  /api/dashboard/activity - Matched /api/dashboard/:path*. Routing to saas-microservices-api (local)
+dashboard:proxy:  /_next/static/media/797e433ab948586e-s.p.dbea232f.woff2 - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Broot-of-the-server%5D__af3b7d06._.css - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/media/caa3a2e1cccd8315-s.p.853070df.woff2 - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_e20deb6e._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_react-dom_8e699084._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_react-server-dom-turbopack_3cc7e47c._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_next-devtools_index_a4b2756f.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_62bf7d2d._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_client_452209ea._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_5bd4361b._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/69652_%40swc_helpers_cjs_679851cc._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:dev:  GET / 200 in 307ms (compile: 7ms, proxy.ts: 7ms, render: 292ms)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_a0ff3932._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/turbopack-apps_dashboard_a5152914._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_663657c5._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_favicon_ico_mjs_043db7d3._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/_060bd90a._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_layout_tsx_b7f4bad0._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_c407dc8f._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/node_modules__pnpm_0605e777._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_page_tsx_5ecb0cb6._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_client_components_builtin_global-error_b7f4bad0.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_4cc8da19._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/webpack-hmr?id=YJuyh4FXpD_i-7iA2wPFN - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  / - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /api/users/user - Matched /api/users/:path*. Routing to saas-microservices-api (local)
+dashboard:proxy:  /api/dashboard/activity - Matched /api/dashboard/:path*. Routing to saas-microservices-api (local)
+dashboard:proxy:  /_next/static/chunks/%5Broot-of-the-server%5D__af3b7d06._.css - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_e20deb6e._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_react-dom_8e699084._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_react-server-dom-turbopack_3cc7e47c._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_next-devtools_index_a4b2756f.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_62bf7d2d._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_client_452209ea._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_5bd4361b._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/69652_%40swc_helpers_cjs_679851cc._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_a0ff3932._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:dev:  GET / 200 in 305ms (compile: 5ms, proxy.ts: 8ms, render: 292ms)
+dashboard:proxy:  /_next/static/chunks/turbopack-apps_dashboard_a5152914._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_663657c5._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_favicon_ico_mjs_043db7d3._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/_060bd90a._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_layout_tsx_b7f4bad0._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_c407dc8f._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/node_modules__pnpm_0605e777._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_page_tsx_5ecb0cb6._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_client_components_builtin_global-error_b7f4bad0.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_4cc8da19._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/webpack-hmr?id=tcU_hTmaaXprLsxNqdzJO - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /devices - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /api/emulation/devices - Matched /api/emulation/:path*. Routing to saas-microservices-emulation (local)
+dashboard:proxy:  /api/users/user - Matched /api/users/:path*. Routing to saas-microservices-api (local)
+dashboard:proxy:  /_next/static/chunks/%5Broot-of-the-server%5D__af3b7d06._.css - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_e20deb6e._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_react-dom_8e699084._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_react-server-dom-turbopack_3cc7e47c._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_next-devtools_index_a4b2756f.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_compiled_62bf7d2d._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_client_452209ea._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:dev:  GET /devices 200 in 194ms (compile: 5ms, proxy.ts: 6ms, render: 183ms)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_5bd4361b._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/69652_%40swc_helpers_cjs_679851cc._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_a0ff3932._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/turbopack-apps_dashboard_a5152914._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_663657c5._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_favicon_ico_mjs_043db7d3._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/_060bd90a._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_layout_tsx_b7f4bad0._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/2443f_next_dist_client_components_builtin_global-error_b7f4bad0.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_5ebd0cf1._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/node_modules__pnpm_0605e777._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/apps_dashboard_src_app_devices_page_tsx_5ecb0cb6._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_4cc8da19._.js - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /_next/webpack-hmr?id=EJ1Rfs2zX_O_Mgz8owU6o - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /__nextjs_font/geist-latin.woff2 - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
+dashboard:proxy:  /__nextjs_original-stack-frames - Did not match any routes. Routing to default app: saas-microservices-dashboard (local)
