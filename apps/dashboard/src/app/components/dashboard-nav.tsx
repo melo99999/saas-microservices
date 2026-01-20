@@ -75,6 +75,14 @@ export function DashboardNav() {
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild>
+              <a href="/emulation" className="flex items-center gap-2">
+                <Package className="h-4 w-4" />
+                <span>Emulation</span>
+              </a>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
         </SidebarMenu>
       </SidebarContent>
     </Sidebar>
