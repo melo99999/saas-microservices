@@ -1,4 +1,5 @@
 import express from "express";
+import { v4 as uuidv4 } from "uuid";
 
 const app = express();
 app.use(express.json());
@@ -34,7 +35,7 @@ router.post("/sessions", (req, res) => {
     return res.status(400).json({ error: "Device not available" });
   }
 
-  const sessionId = Math.random().toString(36).slice(2, 11);
+  const sessionId = uuidv4();
   const session = {
     id: sessionId,
     deviceId,
