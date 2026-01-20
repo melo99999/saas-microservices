@@ -1,25 +1,39 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useEffect, useState } from "react";
 import { fetchApi } from "@/lib/fetch-api";
 import { DashboardHeader } from "@/app/components/dashboard-header";
 import { DashboardLayout } from "@/app/components/dashboard-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-export const metadata: Metadata = {
-  title: "Devices",
-};
+import { DeviceCard } from "@/app/components/device-card";
 
 interface Device {
   id: string;
   name: string;
   status: "online" | "offline";
+  userAgent: string;
 }
 
 interface DevicesResponse {
   devices: Device[];
 }
 
-export default async function Devices() {
-  const { devices } = await fetchApi<DevicesResponse>("/api/emulation/devices");
+export default function Devices() {
+  const [devices, setDevices] = useState<Device[]>([]);
+
+  useEffect(() => {
+    fetchApi<DevicesResponse>("/api/emulation/devices")
+      .then((data) => setDevices(data.devices))
+      .catch(console.error);
+  }, []);
+
+  const handleDeviceUpdate = (updatedDevice: Device) => {
+    setDevices((prevDevices) =>
+      prevDevices.map((device) =>
+        device.id === updatedDevice.id ? updatedDevice : device
+      )
+    );
+  };
 
   return (
     <DashboardLayout>
@@ -33,18 +47,13 @@ export default async function Devices() {
             <CardTitle>Emulated Devices</CardTitle>
           </CardHeader>
           <CardContent>
-            <ul>
+            <ul className="space-y-4">
               {devices.map((device) => (
-                <li key={device.id} className="flex items-center justify-between p-2">
-                  <span>{device.name}</span>
-                  <span className={`px-2 py-1 rounded-full text-xs ${
-                    device.status === "online"
-                      ? "bg-green-200 text-green-800"
-                      : "bg-red-200 text-red-800"
-                  }`}>
-                    {device.status}
-                  </span>
-                </li>
+                <DeviceCard
+                  key={device.id}
+                  device={device}
+                  onDeviceUpdate={handleDeviceUpdate}
+                />
               ))}
             </ul>
           </CardContent>

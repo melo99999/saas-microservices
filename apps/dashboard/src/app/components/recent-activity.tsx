@@ -1,4 +1,6 @@
-import { cookies, headers } from "next/headers";
+"use client";
+
+import { useEffect, useState } from "react";
 import {
   Card,
   CardContent,
@@ -19,10 +21,14 @@ interface ActivityResponse {
   activities: Activity[];
 }
 
-export async function RecentActivity() {
-  const activities = (
-    await fetchApi<ActivityResponse>("/api/dashboard/activity")
-  ).activities.slice(0, 6);
+export function RecentActivity() {
+  const [activities, setActivities] = useState<Activity[]>([]);
+
+  useEffect(() => {
+    fetchApi<ActivityResponse>("/api/dashboard/activity")
+      .then((data) => setActivities(data.activities.slice(0, 6)))
+      .catch(console.error);
+  }, []);
 
   return (
     <Card>
@@ -43,7 +49,7 @@ export async function RecentActivity() {
                 </p>
               </div>
               <div className="ml-auto text-sm text-muted-foreground">
-                {activity.timestamp}
+                {new Date(activity.timestamp).toLocaleDateString()}
               </div>
             </div>
           ))}
