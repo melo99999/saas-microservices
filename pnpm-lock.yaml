@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@playwright/test':
+        specifier: ^1.57.0
+        version: 1.57.0
       '@types/node':
         specifier: 20.11.30
         version: 20.11.30
@@ -53,7 +56,7 @@ importers:
         version: 1.2.7(@types/react-dom@19.1.7(@types/react@19.1.9))(@types/react@19.1.9)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@vercel/microfrontends':
         specifier: 2.0.1
-        version: 2.0.1(next@16.0.10(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        version: 2.0.1(next@16.0.10(@playwright/test@1.57.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -65,7 +68,7 @@ importers:
         version: 0.468.0(react@19.2.3)
       next:
         specifier: ^16.0.10
-        version: 16.0.10(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        version: 16.0.10(@playwright/test@1.57.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -77,7 +80,7 @@ importers:
         version: 2.6.0
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.17(ts-node@10.9.1(@types/node@20.11.30)(typescript@5.9.2)))
+        version: 1.0.7(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.11.30)(typescript@5.9.2)))
     devDependencies:
       '@types/node':
         specifier: ^20
@@ -93,9 +96,34 @@ importers:
         version: 8.5.6
       tailwindcss:
         specifier: ^3.4.1
-        version: 3.4.17(ts-node@10.9.1(@types/node@20.11.30)(typescript@5.9.2))
+        version: 3.4.17(ts-node@10.9.2(@types/node@20.11.30)(typescript@5.9.2))
       typescript:
         specifier: ^5
+        version: 5.9.2
+
+  apps/emulation:
+    dependencies:
+      cookie-parser:
+        specifier: ^1.4.6
+        version: 1.4.7
+      express:
+        specifier: ^4.19.2
+        version: 4.21.2
+    devDependencies:
+      '@types/cookie-parser':
+        specifier: ^1.4.7
+        version: 1.4.10(@types/express@4.17.25)
+      '@types/express':
+        specifier: ^4.17.21
+        version: 4.17.25
+      '@types/node':
+        specifier: ^20.12.12
+        version: 20.19.30
+      ts-node:
+        specifier: ^10.9.2
+        version: 10.9.2(@types/node@20.19.30)(typescript@5.9.2)
+      typescript:
+        specifier: ^5.4.5
         version: 5.9.2
 
 packages:
@@ -509,6 +537,11 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
+  '@playwright/test@1.57.0':
+    resolution: {integrity: sha512-6TyEnHgd6SArQO8UO2OMTxshln3QMWBtPGrOCgs3wVEmQmwyuNtB10IZMfmYDE0riwNR1cu4q+pPcxMVtaG3TA==}
+    engines: {node: '>=18'}
+    hasBin: true
+
   '@radix-ui/primitive@1.1.2':
     resolution: {integrity: sha512-XnbHrrprsNqZKQhStrSwgRUQzoCI1glLzdw79xiZPoofhGICeZRSQ3dIxAKH1gb3OHfNf4d6f+vAv3kil2eggA==}
 
@@ -787,8 +820,19 @@ packages:
   '@types/connect@3.4.38':
     resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
 
+  '@types/cookie-parser@1.4.10':
+    resolution: {integrity: sha512-B4xqkqfZ8Wek+rCOeRxsjMS9OgvzebEzzLYw7NHYuvzb7IdxOkI0ZHGgeEBX4PUM7QGVvNSK60T3OvWj3YfBRg==}
+    peerDependencies:
+      '@types/express': '*'
+
+  '@types/express-serve-static-core@4.19.8':
+    resolution: {integrity: sha512-02S5fmqeoKzVZCHPZid4b8JH2eM5HzQLZWN2FohQEy/0eXTq8VXZfSN6Pcr3F6N9R/vNrj7cpgbhjie6m/1tCA==}
+
   '@types/express-serve-static-core@5.1.0':
     resolution: {integrity: sha512-jnHMsrd0Mwa9Cf4IdOzbz543y4XJepXrbia2T4b6+spXC2We3t1y6K44D3mR8XMFSXMCf3/l7rCgddfx7UNVBA==}
+
+  '@types/express@4.17.25':
+    resolution: {integrity: sha512-dVd04UKsfpINUnK0yBoYHDF3xu7xVH4BuDotC/xGuycx4CgbP48X/KF/586bcObxT0HENHXEU8Nqtu6NR+eKhw==}
 
   '@types/express@5.0.3':
     resolution: {integrity: sha512-wGA0NX93b19/dZC1J18tKWVIYWyyF2ZjT9vin/NRu0qzzvfVzWjs04iq2rQ3H65vCTQYlRqs3YHfY7zjdV+9Kw==}
@@ -804,6 +848,9 @@ packages:
 
   '@types/node@20.11.30':
     resolution: {integrity: sha512-dHM6ZxwlmuZaRmUPfv1p+KrdD1Dci04FbdEm/9wEMouFqxYoFl5aMkt0VMAUtYRQDyYvD41WJLukhq/ha3YuTw==}
+
+  '@types/node@20.19.30':
+    resolution: {integrity: sha512-WJtwWJu7UdlvzEAUm484QNg5eAoq5QR08KDNx7g45Usrs2NtOPiX8ugDqmKdXkyL03rBqU5dYNYVQetEpBHq2g==}
 
   '@types/node@22.18.10':
     resolution: {integrity: sha512-anNG/V/Efn/YZY4pRzbACnKxNKoBng2VTFydVu8RRs5hQjikP8CQfaeAV59VFSCzKNp90mXiVXW2QzV56rwMrg==}
@@ -1154,6 +1201,11 @@ packages:
     resolution: {integrity: sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==}
     engines: {node: '>= 0.6'}
 
+  fsevents@2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -1425,6 +1477,16 @@ packages:
   pirates@4.0.7:
     resolution: {integrity: sha512-TfySrs/5nm8fQJDcBDuUng3VOUKsd7S+zqvbOTiGXHfxX4wK31ard+hoNuvkicM/2YFzlpDgABOevKSsB4G/FA==}
     engines: {node: '>= 6'}
+
+  playwright-core@1.57.0:
+    resolution: {integrity: sha512-agTcKlMw/mjBWOnD6kFZttAAGHgi/Nw0CZ2o6JqWSbMlI219lAFLZZCyqByTsvVAJq5XA5H8cA6PrvBRpBWEuQ==}
+    engines: {node: '>=18'}
+    hasBin: true
+
+  playwright@1.57.0:
+    resolution: {integrity: sha512-ilYQj1s8sr2ppEJ2YVadYBN0Mb3mdo9J0wQ+UuDhzYqURwSoW4n1Xs5vs7ORwgDGmyEh33tRMeS8KhdkMoLXQw==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   postcss-import@15.1.0:
     resolution: {integrity: sha512-hpr+J05B2FVYUAXHeK1YyI267J/dDDhMU6B6civm8hSY1jYJnBXxzKDKDswzJmtLHryrjhnDjqqp/49t8FALew==}
@@ -1702,8 +1764,8 @@ packages:
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
-  ts-node@10.9.1:
-    resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
+  ts-node@10.9.2:
+    resolution: {integrity: sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==}
     hasBin: true
     peerDependencies:
       '@swc/core': '>=1.2.50'
@@ -1840,7 +1902,6 @@ snapshots:
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
-    optional: true
 
   '@emnapi/runtime@1.7.1':
     dependencies:
@@ -2066,7 +2127,6 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.4
-    optional: true
 
   '@next/env@15.5.4': {}
 
@@ -2110,6 +2170,10 @@ snapshots:
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
+
+  '@playwright/test@1.57.0':
+    dependencies:
+      playwright: 1.57.0
 
   '@radix-ui/primitive@1.1.2': {}
 
@@ -2339,33 +2403,47 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@tsconfig/node10@1.0.11':
-    optional: true
+  '@tsconfig/node10@1.0.11': {}
 
-  '@tsconfig/node12@1.0.11':
-    optional: true
+  '@tsconfig/node12@1.0.11': {}
 
-  '@tsconfig/node14@1.0.3':
-    optional: true
+  '@tsconfig/node14@1.0.3': {}
 
-  '@tsconfig/node16@1.0.4':
-    optional: true
+  '@tsconfig/node16@1.0.4': {}
 
   '@types/body-parser@1.19.6':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 22.18.10
+      '@types/node': 20.19.30
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 22.18.10
+      '@types/node': 20.19.30
 
-  '@types/express-serve-static-core@5.1.0':
+  '@types/cookie-parser@1.4.10(@types/express@4.17.25)':
     dependencies:
-      '@types/node': 22.18.10
+      '@types/express': 4.17.25
+
+  '@types/express-serve-static-core@4.19.8':
+    dependencies:
+      '@types/node': 20.19.30
       '@types/qs': 6.14.0
       '@types/range-parser': 1.2.7
       '@types/send': 1.2.0
+
+  '@types/express-serve-static-core@5.1.0':
+    dependencies:
+      '@types/node': 20.19.30
+      '@types/qs': 6.14.0
+      '@types/range-parser': 1.2.7
+      '@types/send': 1.2.0
+
+  '@types/express@4.17.25':
+    dependencies:
+      '@types/body-parser': 1.19.6
+      '@types/express-serve-static-core': 4.19.8
+      '@types/qs': 6.14.0
+      '@types/serve-static': 1.15.9
 
   '@types/express@5.0.3':
     dependencies:
@@ -2382,6 +2460,10 @@ snapshots:
   '@types/node@20.11.30':
     dependencies:
       undici-types: 5.26.5
+
+  '@types/node@20.19.30':
+    dependencies:
+      undici-types: 6.21.0
 
   '@types/node@22.18.10':
     dependencies:
@@ -2402,19 +2484,19 @@ snapshots:
   '@types/send@0.17.5':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 22.18.10
+      '@types/node': 20.19.30
 
   '@types/send@1.2.0':
     dependencies:
-      '@types/node': 22.18.10
+      '@types/node': 20.19.30
 
   '@types/serve-static@1.15.9':
     dependencies:
       '@types/http-errors': 2.0.5
-      '@types/node': 22.18.10
+      '@types/node': 20.19.30
       '@types/send': 0.17.5
 
-  '@vercel/microfrontends@2.0.1(next@16.0.10(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@vercel/microfrontends@2.0.1(next@16.0.10(@playwright/test@1.57.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@next/env': 15.5.4
       '@types/md5': 2.3.5
@@ -2429,7 +2511,7 @@ snapshots:
       path-to-regexp: 6.2.1
       semver: 7.7.2
     optionalDependencies:
-      next: 16.0.10(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      next: 16.0.10(@playwright/test@1.57.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
     transitivePeerDependencies:
@@ -2443,10 +2525,8 @@ snapshots:
   acorn-walk@8.3.4:
     dependencies:
       acorn: 8.15.0
-    optional: true
 
-  acorn@8.15.0:
-    optional: true
+  acorn@8.15.0: {}
 
   ajv@8.17.1:
     dependencies:
@@ -2472,8 +2552,7 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
-  arg@4.1.3:
-    optional: true
+  arg@4.1.3: {}
 
   arg@5.0.2: {}
 
@@ -2579,8 +2658,7 @@ snapshots:
 
   cookie@1.0.2: {}
 
-  create-require@1.1.1:
-    optional: true
+  create-require@1.1.1: {}
 
   cross-spawn@7.0.6:
     dependencies:
@@ -2609,8 +2687,7 @@ snapshots:
 
   didyoumean@1.2.2: {}
 
-  diff@4.0.2:
-    optional: true
+  diff@4.0.2: {}
 
   dlv@1.1.3: {}
 
@@ -2754,6 +2831,9 @@ snapshots:
 
   fresh@0.5.2: {}
 
+  fsevents@2.3.2:
+    optional: true
+
   fsevents@2.3.3:
     optional: true
 
@@ -2876,8 +2956,7 @@ snapshots:
     dependencies:
       react: 19.2.3
 
-  make-error@1.3.6:
-    optional: true
+  make-error@1.3.6: {}
 
   math-intrinsics@1.1.0: {}
 
@@ -2928,7 +3007,7 @@ snapshots:
 
   negotiator@0.6.3: {}
 
-  next@16.0.10(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
+  next@16.0.10(@playwright/test@1.57.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:
       '@next/env': 16.0.10
       '@swc/helpers': 0.5.15
@@ -2946,6 +3025,7 @@ snapshots:
       '@next/swc-linux-x64-musl': 16.0.10
       '@next/swc-win32-arm64-msvc': 16.0.10
       '@next/swc-win32-x64-msvc': 16.0.10
+      '@playwright/test': 1.57.0
       sharp: 0.34.5
     transitivePeerDependencies:
       - '@babel/core'
@@ -2988,6 +3068,14 @@ snapshots:
 
   pirates@4.0.7: {}
 
+  playwright-core@1.57.0: {}
+
+  playwright@1.57.0:
+    dependencies:
+      playwright-core: 1.57.0
+    optionalDependencies:
+      fsevents: 2.3.2
+
   postcss-import@15.1.0(postcss@8.5.6):
     dependencies:
       postcss: 8.5.6
@@ -3000,13 +3088,13 @@ snapshots:
       camelcase-css: 2.0.1
       postcss: 8.5.6
 
-  postcss-load-config@4.0.2(postcss@8.5.6)(ts-node@10.9.1(@types/node@20.11.30)(typescript@5.9.2)):
+  postcss-load-config@4.0.2(postcss@8.5.6)(ts-node@10.9.2(@types/node@20.11.30)(typescript@5.9.2)):
     dependencies:
       lilconfig: 3.1.3
       yaml: 2.8.1
     optionalDependencies:
       postcss: 8.5.6
-      ts-node: 10.9.1(@types/node@20.11.30)(typescript@5.9.2)
+      ts-node: 10.9.2(@types/node@20.11.30)(typescript@5.9.2)
 
   postcss-nested@6.2.0(postcss@8.5.6):
     dependencies:
@@ -3265,11 +3353,11 @@ snapshots:
 
   tailwind-merge@2.6.0: {}
 
-  tailwindcss-animate@1.0.7(tailwindcss@3.4.17(ts-node@10.9.1(@types/node@20.11.30)(typescript@5.9.2))):
+  tailwindcss-animate@1.0.7(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.11.30)(typescript@5.9.2))):
     dependencies:
-      tailwindcss: 3.4.17(ts-node@10.9.1(@types/node@20.11.30)(typescript@5.9.2))
+      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@20.11.30)(typescript@5.9.2))
 
-  tailwindcss@3.4.17(ts-node@10.9.1(@types/node@20.11.30)(typescript@5.9.2)):
+  tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.11.30)(typescript@5.9.2)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -3288,7 +3376,7 @@ snapshots:
       postcss: 8.5.6
       postcss-import: 15.1.0(postcss@8.5.6)
       postcss-js: 4.0.1(postcss@8.5.6)
-      postcss-load-config: 4.0.2(postcss@8.5.6)(ts-node@10.9.1(@types/node@20.11.30)(typescript@5.9.2))
+      postcss-load-config: 4.0.2(postcss@8.5.6)(ts-node@10.9.2(@types/node@20.11.30)(typescript@5.9.2))
       postcss-nested: 6.2.0(postcss@8.5.6)
       postcss-selector-parser: 6.1.2
       resolve: 1.22.10
@@ -3312,7 +3400,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  ts-node@10.9.1(@types/node@20.11.30)(typescript@5.9.2):
+  ts-node@10.9.2(@types/node@20.11.30)(typescript@5.9.2):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
@@ -3330,6 +3418,24 @@ snapshots:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     optional: true
+
+  ts-node@10.9.2(@types/node@20.19.30)(typescript@5.9.2):
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      '@tsconfig/node10': 1.0.11
+      '@tsconfig/node12': 1.0.11
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.4
+      '@types/node': 20.19.30
+      acorn: 8.15.0
+      acorn-walk: 8.3.4
+      arg: 4.1.3
+      create-require: 1.1.1
+      diff: 4.0.2
+      make-error: 1.3.6
+      typescript: 5.9.2
+      v8-compile-cache-lib: 3.0.1
+      yn: 3.1.1
 
   tslib@2.8.1: {}
 
@@ -3399,8 +3505,7 @@ snapshots:
 
   utils-merge@1.0.1: {}
 
-  v8-compile-cache-lib@3.0.1:
-    optional: true
+  v8-compile-cache-lib@3.0.1: {}
 
   vary@1.1.2: {}
 
@@ -3422,5 +3527,4 @@ snapshots:
 
   yaml@2.8.1: {}
 
-  yn@3.1.1:
-    optional: true
+  yn@3.1.1: {}

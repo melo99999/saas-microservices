@@ -13,6 +13,7 @@
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
+    "@playwright/test": "^1.57.0",
     "@types/node": "20.11.30",
     "prettier": "^3.6.2",
     "turbo": "^2.5.5"

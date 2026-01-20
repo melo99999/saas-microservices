@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Acme Dashboard",
+  title: "JMSN965 cloud",
   description: "SaaS daashboard talking to two microservices",
 };
 

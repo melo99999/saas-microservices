@@ -17,6 +17,17 @@
       "development": {
         "local": 3001
       }
+    },
+    "saas-microservices-emulation": {
+      "routing": [
+        {
+          "paths": ["/emulation/api/:path*"]
+        }
+      ],
+      "packageName": "emulation",
+      "development": {
+        "local": 3002
+      }
     }
   }
 }

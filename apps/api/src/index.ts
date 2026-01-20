@@ -202,6 +202,12 @@ app.get("/api/dashboard/activity", (req, res) => {
   });
 });
 
+import deviceRouter from "./routes/device.js";
+import sessionRouter from "./routes/session.js";
+
+app.use("/api/devices", deviceRouter);
+app.use("/api/sessions", sessionRouter);
+
 // Health check
 app.get("/healthz", (req, res) => {
   res.status(200).json({ status: "ok", timestamp: new Date().toISOString() });

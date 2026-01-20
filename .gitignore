@@ -39,3 +39,7 @@ yarn-error.log*
 
 # Turborepo
 .turbo
+
+# Logs
+dev.log
+pnpm_dev.log
