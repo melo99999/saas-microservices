@@ -1,9 +1,12 @@
 import express from "express";
 
-export const apiRouter = express.Router();
+const app = express();
+app.use(express.json());
+
+const router = express.Router();
 
 // Health check
-apiRouter.get("/health", (req, res) => {
+router.get("/health", (req, res) => {
   res.status(200).json({ status: "ok", timestamp: new Date().toISOString() });
 });
 
@@ -15,7 +18,7 @@ const devices = [
   { id: "4", name: "iPhone 13", os: "iOS", os_version: "15.6", available: true },
 ];
 
-apiRouter.get("/devices", (req, res) => {
+router.get("/devices", (req, res) => {
   res.status(200).json(devices);
 });
 
@@ -23,7 +26,7 @@ apiRouter.get("/devices", (req, res) => {
 const sessions = new Map<string, any>();
 
 // Create a new session
-apiRouter.post("/sessions", (req, res) => {
+router.post("/sessions", (req, res) => {
   const { deviceId } = req.body;
   const device = devices.find((d) => d.id === deviceId);
 
@@ -46,7 +49,7 @@ apiRouter.post("/sessions", (req, res) => {
 });
 
 // Get session status
-apiRouter.get("/sessions/:id", (req, res) => {
+router.get("/sessions/:id", (req, res) => {
   const session = sessions.get(req.params.id);
   if (!session) {
     return res.status(404).json({ error: "Session not found" });
@@ -55,7 +58,7 @@ apiRouter.get("/sessions/:id", (req, res) => {
 });
 
 // Terminate a session
-apiRouter.delete("/sessions/:id", (req, res) => {
+router.delete("/sessions/:id", (req, res) => {
   const session = sessions.get(req.params.id);
   if (!session) {
     return res.status(404).json({ error: "Session not found" });
@@ -71,7 +74,7 @@ apiRouter.delete("/sessions/:id", (req, res) => {
 });
 
 // Forward input to a session
-apiRouter.post("/sessions/:id/input", (req, res) => {
+router.post("/sessions/:id/input", (req, res) => {
   const session = sessions.get(req.params.id);
   if (!session) {
     return res.status(404).json({ error: "Session not found" });
@@ -84,7 +87,7 @@ apiRouter.post("/sessions/:id/input", (req, res) => {
 });
 
 // Get a streaming token for a session
-apiRouter.post("/sessions/:id/token", (req, res) => {
+router.post("/sessions/:id/token", (req, res) => {
   const session = sessions.get(req.params.id);
   if (!session) {
     return res.status(404).json({ error: "Session not found" });
@@ -94,4 +97,10 @@ apiRouter.post("/sessions/:id/token", (req, res) => {
   const token = `fake-token-for-session-${req.params.id}`;
 
   res.status(200).json({ token });
+});
+
+app.use("/api/emulation", router);
+
+app.listen(3002, () => {
+  console.log(`Emulation app listening on port 3002`);
 });
