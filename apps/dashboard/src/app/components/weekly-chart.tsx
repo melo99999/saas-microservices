@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 interface WeeklyChartProps {
@@ -10,7 +11,12 @@ interface WeeklyChartProps {
   }>;
 }
 
-export function WeeklyChart({ chartData }: WeeklyChartProps) {
+// ⚡ Bolt: Memoized WeeklyChart to prevent unnecessary re-renders.
+// This component is computationally expensive due to the SVG rendering.
+// React.memo ensures it only re-renders when `chartData` props actually change.
+export const WeeklyChart = memo(function WeeklyChart({
+  chartData,
+}: WeeklyChartProps) {
   const maxValue = Math.max(...chartData.map((d) => d.value));
 
   return (
@@ -226,4 +232,4 @@ export function WeeklyChart({ chartData }: WeeklyChartProps) {
       </CardContent>
     </Card>
   );
-}
+});
