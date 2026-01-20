@@ -9,7 +9,7 @@ import {
 import { ProfileTable } from "@/components/ui/profile-table";
 
 export const metadata: Metadata = {
-  title: "Emulation",
+  title: "Emulation - JMSN965 cloud",
 };
 
 async function getProfiles() {

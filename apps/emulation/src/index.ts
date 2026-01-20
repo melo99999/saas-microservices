@@ -23,7 +23,7 @@ const PROFILES = [
   },
 ];
 
-app.get("/emulation/api/profiles", (req, res) => {
+app.get("/api/profiles", (req, res) => {
   res.json(PROFILES);
 });
 

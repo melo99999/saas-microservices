@@ -19,7 +19,7 @@ export function DashboardNav() {
   return (
     <Sidebar>
       <SidebarHeader className="border-b p-4">
-        <h2 className="text-lg font-semibold">Acme Inc</h2>
+        <h2 className="text-lg font-semibold">JMSN965 cloud</h2>
       </SidebarHeader>
       <SidebarContent>
         <SidebarMenu>
