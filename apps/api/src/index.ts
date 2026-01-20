@@ -1,6 +1,7 @@
 import express from "express";
 import { fileURLToPath } from "url";
 import cookieParser from "cookie-parser";
+import { apiRouter } from "./routes.js";
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -206,6 +207,8 @@ app.get("/api/dashboard/activity", (req, res) => {
 app.get("/healthz", (req, res) => {
   res.status(200).json({ status: "ok", timestamp: new Date().toISOString() });
 });
+
+app.use("/api", apiRouter);
 
 app.listen(3001, () => {
   console.log(`API app listening on port 3001`);
