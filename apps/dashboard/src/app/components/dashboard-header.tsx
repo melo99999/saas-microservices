@@ -1,4 +1,6 @@
-import { cookies, headers } from "next/headers";
+"use client";
+
+import { useEffect, useState } from "react";
 import { Bell, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,8 +11,14 @@ interface User {
   name: string;
 }
 
-export async function DashboardHeader() {
-  const user = await fetchApi<User>("/api/users/user");
+export function DashboardHeader() {
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    fetchApi<User>("/api/users/user")
+      .then(setUser)
+      .catch(() => setUser({ name: "Guest" }));
+  }, []);
 
   return (
     <header className="flex h-14 items-center gap-4 border-b bg-background px-6">
@@ -24,7 +32,7 @@ export async function DashboardHeader() {
           />
         </div>
       </form>
-      <span className="text-sm">{user.name}</span>
+      <span className="text-sm">{user?.name}</span>
       <ThemeToggle />
       <Button variant="ghost" size="icon" className="relative">
         <Bell className="h-4 w-4" />

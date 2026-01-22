@@ -1,6 +1,14 @@
 "use client";
 
-import { BarChart3, Users, Settings, Package, Calendar } from "lucide-react";
+import { usePathname } from "next/navigation";
+import {
+  BarChart3,
+  Users,
+  Settings,
+  Package,
+  Calendar,
+  Smartphone,
+} from "lucide-react";
 
 import {
   Sidebar,
@@ -12,10 +20,11 @@ import {
   SidebarMenuSub,
   SidebarMenuSubItem,
   SidebarMenuSubButton,
-  SidebarTrigger,
 } from "@/components/ui/sidebar";
 
 export function DashboardNav() {
+  const pathname = usePathname();
+
   return (
     <Sidebar>
       <SidebarHeader className="border-b p-4">
@@ -24,10 +33,18 @@ export function DashboardNav() {
       <SidebarContent>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton asChild isActive>
-              <a href="#" className="flex items-center gap-2">
+            <SidebarMenuButton asChild isActive={pathname === "/"}>
+              <a href="/" className="flex items-center gap-2">
                 <BarChart3 className="h-4 w-4" />
                 <span>Dashboard</span>
+              </a>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild isActive={pathname === "/devices"}>
+              <a href="/devices" className="flex items-center gap-2">
+                <Smartphone className="h-4 w-4" />
+                <span>Devices</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>

@@ -10,6 +10,7 @@
     "dev": "turbo run dev",
     "dev:api": "turbo run dev -F api",
     "dev:dashboard": "turbo run dev -F dashboard",
+    "dev:emulation": "turbo run dev -F emulation",
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
