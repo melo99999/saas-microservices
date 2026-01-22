@@ -29,7 +29,11 @@ app.get("/api/users/login", (req, res) => {
   const existingUser = req.cookies[AUTH_COOKIE_NAME];
   if (!existingUser) {
     const user = USERS[Math.floor(Math.random() * USERS.length)];
-    res.cookie(AUTH_COOKIE_NAME, user.id);
+    res.cookie(AUTH_COOKIE_NAME, user.id, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "lax",
+    });
   }
   return res.redirect("/");
 });
