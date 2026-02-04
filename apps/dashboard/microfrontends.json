@@ -10,12 +10,23 @@
     "saas-microservices-api": {
       "routing": [
         {
-          "paths": ["/api/:path*"]
+          "paths": ["/api/users/:path*", "/api/dashboard/:path*"]
         }
       ],
       "packageName": "api",
       "development": {
         "local": 3001
+      }
+    },
+    "saas-microservices-emulation": {
+      "routing": [
+        {
+          "paths": ["/api/emulation/:path*"]
+        }
+      ],
+      "packageName": "emulation",
+      "development": {
+        "local": 3002
       }
     }
   }
