@@ -1,6 +1,6 @@
 "use client";
 
-import { BarChart3, Users, Settings, Package, Calendar } from "lucide-react";
+import { BarChart3, Users, Settings, Package, Calendar, Smartphone } from "lucide-react";
 
 import {
   Sidebar,
@@ -28,6 +28,14 @@ export function DashboardNav() {
               <a href="#" className="flex items-center gap-2">
                 <BarChart3 className="h-4 w-4" />
                 <span>Dashboard</span>
+              </a>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild>
+              <a href="/emulation" className="flex items-center gap-2">
+                <Smartphone className="h-4 w-4" />
+                <span>Emulation</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>

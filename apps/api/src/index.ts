@@ -1,15 +1,39 @@
 import express from "express";
 import { fileURLToPath } from "url";
 import cookieParser from "cookie-parser";
+import { v4 as uuidv4 } from 'uuid';
+import fs from "fs";
+import path from "path";
 
 const __filename = fileURLToPath(import.meta.url);
+const DATA_FILE = path.join(path.dirname(__filename), "data.json");
 
 const app = express();
 app.use(cookieParser());
+app.use(express.json());
 
 interface User {
   id: string;
   name: string;
+}
+
+interface EmulationProfile {
+  id: string;
+  name: string;
+  fingerprint: {
+    userAgent: string;
+    platform: string;
+    screenResolution: {
+      width: number;
+      height: number;
+    };
+  };
+  identity: {
+    username: string;
+  };
+  limits: {
+    maxRequests: number;
+  };
 }
 
 const USERS: User[] = [
@@ -22,6 +46,21 @@ const USERS: User[] = [
     name: "Jane Smith",
   },
 ];
+
+let EMULATION_PROFILES: EmulationProfile[] = [];
+
+const readData = () => {
+  if (fs.existsSync(DATA_FILE)) {
+    const data = fs.readFileSync(DATA_FILE, "utf-8");
+    EMULATION_PROFILES = JSON.parse(data);
+  }
+};
+
+const writeData = () => {
+  fs.writeFileSync(DATA_FILE, JSON.stringify(EMULATION_PROFILES, null, 2));
+};
+
+readData();
 
 const AUTH_COOKIE_NAME = "saas_microservices_authed_user";
 
@@ -205,6 +244,70 @@ app.get("/api/dashboard/activity", (req, res) => {
 // Health check
 app.get("/healthz", (req, res) => {
   res.status(200).json({ status: "ok", timestamp: new Date().toISOString() });
+});
+
+// Create a new emulation profile
+app.post("/api/emulation/profiles", (req, res) => {
+  const { name, fingerprint, identity, limits } = req.body;
+  if (!name || !fingerprint || !identity || !limits) {
+    return res.status(400).json({ error: "Missing required fields" });
+  }
+  const newProfile: EmulationProfile = {
+    id: uuidv4(),
+    name,
+    fingerprint,
+    identity,
+    limits,
+  };
+  EMULATION_PROFILES.push(newProfile);
+  writeData();
+  return res.status(201).json(newProfile);
+});
+
+// Get all emulation profiles
+app.get("/api/emulation/profiles", (req, res) => {
+  return res.json(EMULATION_PROFILES);
+});
+
+// Get a single emulation profile by id
+app.get("/api/emulation/profiles/:id", (req, res) => {
+  const profile = EMULATION_PROFILES.find((p) => p.id === req.params.id);
+  if (!profile) {
+    return res.status(404).json({ error: "Profile not found" });
+  }
+  return res.json(profile);
+});
+
+// Update an emulation profile
+app.put("/api/emulation/profiles/:id", (req, res) => {
+  const profileIndex = EMULATION_PROFILES.findIndex((p) => p.id === req.params.id);
+  if (profileIndex === -1) {
+    return res.status(404).json({ error: "Profile not found" });
+  }
+  const { name, fingerprint, identity, limits } = req.body;
+  if (!name || !fingerprint || !identity || !limits) {
+    return res.status(400).json({ error: "Missing required fields" });
+  }
+  EMULATION_PROFILES[profileIndex] = {
+    ...EMULATION_PROFILES[profileIndex],
+    name,
+    fingerprint,
+    identity,
+    limits,
+  };
+  writeData();
+  return res.json(EMULATION_PROFILES[profileIndex]);
+});
+
+// Delete an emulation profile
+app.delete("/api/emulation/profiles/:id", (req, res) => {
+  const profileIndex = EMULATION_PROFILES.findIndex((p) => p.id === req.params.id);
+  if (profileIndex === -1) {
+    return res.status(404).json({ error: "Profile not found" });
+  }
+  EMULATION_PROFILES.splice(profileIndex, 1);
+  writeData();
+  return res.status(204).send();
 });
 
 app.listen(3001, () => {
